@@ -1,0 +1,34 @@
+[2018-09-27 13:33:21.467] [renderer1] [info] no standard startup: not the explorer viewlet
+[2018-09-27 13:33:48.458] [renderer1] [info] no standard startup: not just one text editor
+[2018-09-27 13:35:46.693] [renderer1] [info] No grammar found for scope text.haml
+[2018-09-27 13:35:46.693] [renderer1] [info] No grammar found for scope text.pug.slm
+[2018-09-27 13:35:46.716] [renderer1] [info] No grammar found for scope source.sass
+[2018-09-27 13:35:46.736] [renderer1] [info] No grammar found for scope source.stylus
+[2018-09-27 13:35:46.939] [renderer1] [info] No grammar found for scope source.less
+[2018-09-27 13:35:47.176] [renderer1] [info] No grammar found for scope source.dosbatch
+[2018-09-27 13:35:47.358] [renderer1] [info] No grammar found for scope source.scala
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.dart
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.smarty
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope text.html.javadoc
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.postscript
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.c++
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.js.jquery
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope source.applescript
+[2018-09-27 13:35:47.432] [renderer1] [info] No grammar found for scope text.html.textile
+[2018-09-27 13:40:17.303] [renderer1] [info] no standard startup: not a new window
+[2018-09-27 13:40:42.756] [renderer1] [info] no standard startup: not a new window
+[2018-09-27 13:41:21.992] [renderer1] [info] No grammar found for scope text.haml
+[2018-09-27 13:41:21.992] [renderer1] [info] No grammar found for scope text.pug.slm
+[2018-09-27 13:41:22.000] [renderer1] [info] No grammar found for scope source.sass
+[2018-09-27 13:41:22.028] [renderer1] [info] No grammar found for scope source.stylus
+[2018-09-27 13:41:22.168] [renderer1] [info] No grammar found for scope source.less
+[2018-09-27 13:41:22.356] [renderer1] [info] No grammar found for scope source.dosbatch
+[2018-09-27 13:41:22.466] [renderer1] [info] No grammar found for scope source.scala
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.dart
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.smarty
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope text.html.javadoc
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.postscript
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.c++
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.js.jquery
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.applescript
+[2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope text.html.textile

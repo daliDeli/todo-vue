@@ -1,0 +1,86 @@
+[2018-09-27 13:33:21.941] [exthost1] [info] extension host started
+[2018-09-27 13:33:21.993] [exthost1] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:21.994] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-09-27 13:33:22.141] [exthost1] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.141] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-09-27 13:33:22.459] [exthost1] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.459] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-09-27 13:33:22.477] [exthost1] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.477] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/out/extension
+[2018-09-27 13:33:22.486] [exthost1] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.486] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/esbenp.prettier-vscode-1.6.1/out/src/extension
+[2018-09-27 13:33:22.739] [exthost1] [info] ExtensionService#_doActivateExtension HookyQR.beautify {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.739] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/hookyqr.beautify-1.4.4/extension
+[2018-09-27 13:33:22.821] [exthost1] [info] ExtensionService#_doActivateExtension robertohuertasm.vscode-icons {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:22.821] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/robertohuertasm.vscode-icons-7.27.0/out/src/
+[2018-09-27 13:33:22.976] [exthost1] [info] eager extensions activated
+[2018-09-27 13:33:49.478] [exthost1] [info] extension host started
+[2018-09-27 13:33:49.565] [exthost1] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:49.565] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-09-27 13:33:49.694] [exthost1] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:49.694] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-09-27 13:33:50.060] [exthost1] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:50.060] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-09-27 13:33:50.078] [exthost1] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:50.078] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/out/extension
+[2018-09-27 13:33:50.086] [exthost1] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:50.086] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/esbenp.prettier-vscode-1.6.1/out/src/extension
+[2018-09-27 13:33:50.329] [exthost1] [info] ExtensionService#_doActivateExtension HookyQR.beautify {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:50.329] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/hookyqr.beautify-1.4.4/extension
+[2018-09-27 13:33:50.420] [exthost1] [info] ExtensionService#_doActivateExtension robertohuertasm.vscode-icons {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:33:50.420] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/robertohuertasm.vscode-icons-7.27.0/out/src/
+[2018-09-27 13:33:50.576] [exthost1] [info] eager extensions activated
+[2018-09-27 13:35:46.224] [exthost1] [info] ExtensionService#_doActivateExtension octref.vetur {"startup":false,"activationEvent":"onLanguage:vue"}
+[2018-09-27 13:35:46.224] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/octref.vetur-0.12.6/out/vueMain
+[2018-09-27 13:35:47.981] [exthost1] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2018-09-27 13:35:47.981] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript-language-features/out/extension
+[2018-09-27 13:40:18.517] [exthost1] [info] extension host started
+[2018-09-27 13:40:18.607] [exthost1] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:18.607] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-09-27 13:40:18.840] [exthost1] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:18.841] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-09-27 13:40:19.159] [exthost1] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:19.159] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-09-27 13:40:19.179] [exthost1] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:19.179] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/out/extension
+[2018-09-27 13:40:19.189] [exthost1] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:19.189] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/esbenp.prettier-vscode-1.6.1/out/src/extension
+[2018-09-27 13:40:19.616] [exthost1] [info] ExtensionService#_doActivateExtension HookyQR.beautify {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:19.616] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/hookyqr.beautify-1.4.4/extension
+[2018-09-27 13:40:19.814] [exthost1] [info] ExtensionService#_doActivateExtension robertohuertasm.vscode-icons {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:19.814] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/robertohuertasm.vscode-icons-7.27.0/out/src/
+[2018-09-27 13:40:20.110] [exthost1] [info] eager extensions activated
+[2018-09-27 13:40:20.118] [exthost1] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2018-09-27 13:40:20.118] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript-language-features/out/extension
+[2018-09-27 13:40:44.261] [exthost1] [info] extension host started
+[2018-09-27 13:40:44.343] [exthost1] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.343] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-09-27 13:40:44.459] [exthost1] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.459] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-09-27 13:40:44.703] [exthost1] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.703] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-09-27 13:40:44.718] [exthost1] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.718] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/out/extension
+[2018-09-27 13:40:44.726] [exthost1] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.726] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/dbaeumer.vscode-eslint-1.4.12/client/out/extension
+[2018-09-27 13:40:44.801] [exthost1] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:44.801] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/esbenp.prettier-vscode-1.6.1/out/src/extension
+[2018-09-27 13:40:45.037] [exthost1] [info] ExtensionService#_doActivateExtension HookyQR.beautify {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:45.037] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/hookyqr.beautify-1.4.4/extension
+[2018-09-27 13:40:45.120] [exthost1] [info] ExtensionService#_doActivateExtension robertohuertasm.vscode-icons {"startup":true,"activationEvent":"*"}
+[2018-09-27 13:40:45.120] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/robertohuertasm.vscode-icons-7.27.0/out/src/
+[2018-09-27 13:40:45.241] [exthost1] [info] eager extensions activated
+[2018-09-27 13:40:45.246] [exthost1] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"activationEvent":"onLanguage:javascript"}
+[2018-09-27 13:40:45.246] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/typescript-language-features/out/extension
+[2018-09-27 13:41:21.903] [exthost1] [info] ExtensionService#_doActivateExtension octref.vetur {"startup":false,"activationEvent":"onLanguage:vue"}
+[2018-09-27 13:41:21.903] [exthost1] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/octref.vetur-0.12.6/out/vueMain
+[2018-09-27 13:43:16.621] [exthost1] [info] ExtensionService#_doActivateExtension vscode.extension-editing {"startup":false,"activationEvent":"onLanguage:typescript"}
+[2018-09-27 13:43:16.621] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/extension-editing/out/extension
+[2018-09-27 13:44:59.141] [exthost1] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-09-27 13:44:59.141] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/configuration-editing/out/extension
+[2018-09-27 13:44:59.183] [exthost1] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"activationEvent":"onLanguage:jsonc"}
+[2018-09-27 13:44:59.183] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/json-language-features/client/out/jsonMain
+[2018-09-27 13:54:03.805] [exthost1] [info] ExtensionService#_doActivateExtension vscode.html-language-features {"startup":false,"activationEvent":"onLanguage:html"}
+[2018-09-27 13:54:03.805] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/html-language-features/client/out/htmlMain
+[2018-09-27 16:19:40.625] [exthost1] [info] ExtensionService#_doActivateExtension vscode.npm {"startup":false,"activationEvent":"onLanguage:json"}
+[2018-09-27 16:19:40.627] [exthost1] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/npm/out/main

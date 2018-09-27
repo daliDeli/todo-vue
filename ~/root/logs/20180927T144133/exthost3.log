@@ -1,0 +1,18 @@
+[2018-09-27 14:41:36.283] [exthost3] [info] extension host started
+[2018-09-27 14:41:36.317] [exthost3] [info] ExtensionService#_doActivateExtension vscode.emmet {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.317] [exthost3] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/emmet/out/extension
+[2018-09-27 14:41:36.413] [exthost3] [info] ExtensionService#_doActivateExtension vscode.git {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.413] [exthost3] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/git/out/main
+[2018-09-27 14:41:36.698] [exthost3] [info] ExtensionService#_doActivateExtension vscode.merge-conflict {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.698] [exthost3] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/merge-conflict/out/extension
+[2018-09-27 14:41:36.722] [exthost3] [info] ExtensionService#_doActivateExtension vscode.search-rg {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.722] [exthost3] [info] ExtensionService#loadCommonJSModule /usr/share/code/resources/app/extensions/search-rg/out/extension
+[2018-09-27 14:41:36.733] [exthost3] [info] ExtensionService#_doActivateExtension dbaeumer.vscode-eslint {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.733] [exthost3] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/dbaeumer.vscode-eslint-1.4.12/client/out/extension
+[2018-09-27 14:41:36.841] [exthost3] [info] ExtensionService#_doActivateExtension esbenp.prettier-vscode {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:36.841] [exthost3] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/esbenp.prettier-vscode-1.6.1/out/src/extension
+[2018-09-27 14:41:37.152] [exthost3] [info] ExtensionService#_doActivateExtension HookyQR.beautify {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:37.152] [exthost3] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/hookyqr.beautify-1.4.4/extension
+[2018-09-27 14:41:37.261] [exthost3] [info] ExtensionService#_doActivateExtension robertohuertasm.vscode-icons {"startup":true,"activationEvent":"*"}
+[2018-09-27 14:41:37.261] [exthost3] [info] ExtensionService#loadCommonJSModule /home/academy/.vscode/extensions/robertohuertasm.vscode-icons-7.27.0/out/src/
+[2018-09-27 14:41:37.383] [exthost3] [info] eager extensions activated
