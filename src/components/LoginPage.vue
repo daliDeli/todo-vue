@@ -1,51 +1,54 @@
 <template>
     <section>
         <div class='container is-fluid'>
-                
+
              <b-field label="Email">
-                <b-input 
+                <b-input
                     type="is-success"
                     v-model='email'
                 >
                 </b-input>
             </b-field>
             <b-field label="Password">
-                <b-input 
+                <b-input
                     type="password"
                     v-model='password'
                 >
                 </b-input>
-            </b-field>     
-                <p class="control">
-                    <button 
-                    type='submit' 
-                    class="button is-primary"
-                    v-on:click="login"
-                    >
-                    Login
-                    </button>
-                </p>
-                <p>{{title}}</p>
-                <p>{{description}}</p>
+            </b-field>
+            <p class="control">
+                <button
+                class="button is-primary"
+                v-on:click="login"
+                >
+                Login
+                </button>
+            </p>
         </div>
     </section>
 </template>
 
 <script>
+import { loginUser } from '../services/communication';
 
 export default{
-    name: 'LoginPage',
-    data(){
-        return {
-            email: '',
-            password: '',
-        }
+  name: 'LoginPage',
+  data() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+  methods: {
+    login() {
+      loginUser(this.email, this.password)
+        .then(response => {
+            console.log(response);
+            
+            })
+        .catch(error => console.log(error));
     },
-    methods: {
-        login: function(){
-            alert('radi login');
-        }
-    }
+  },
 };
 </script>
 

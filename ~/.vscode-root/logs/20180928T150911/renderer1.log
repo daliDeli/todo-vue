@@ -1,0 +1,17 @@
+[2018-09-28 15:09:15.912] [renderer1] [info] no standard startup: not the explorer viewlet
+[2018-09-28 15:09:56.636] [renderer1] [info] no standard startup: not just one text editor
+[2018-09-28 15:11:07.085] [renderer1] [info] No grammar found for scope text.haml
+[2018-09-28 15:11:07.085] [renderer1] [info] No grammar found for scope text.pug.slm
+[2018-09-28 15:11:07.168] [renderer1] [info] No grammar found for scope source.sass
+[2018-09-28 15:11:07.916] [renderer1] [info] No grammar found for scope source.stylus
+[2018-09-28 15:11:08.206] [renderer1] [info] No grammar found for scope source.less
+[2018-09-28 15:11:08.295] [renderer1] [info] No grammar found for scope source.dosbatch
+[2018-09-28 15:11:08.367] [renderer1] [info] No grammar found for scope source.scala
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.dart
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.smarty
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope text.html.javadoc
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.postscript
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.c++
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.js.jquery
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope source.applescript
+[2018-09-28 15:11:08.404] [renderer1] [info] No grammar found for scope text.html.textile

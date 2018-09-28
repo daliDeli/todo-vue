@@ -32,3 +32,4 @@
 [2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.js.jquery
 [2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope source.applescript
 [2018-09-27 13:41:22.493] [renderer1] [info] No grammar found for scope text.html.textile
+[2018-09-28 13:29:53.655] [renderer1] [warning] Aborted onWillSaveTextDocument-event after 1750ms
