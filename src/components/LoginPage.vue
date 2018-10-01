@@ -44,9 +44,10 @@ export default{
     login() {
       loginUser(this.email, this.password)
         .then(response => {
+            console.log('mail,pass',this.email, this.password);
             console.log('login response', response.data);
             sessionStorage.setItem('access_token',response.data.access_token);
-            router.push('/create')
+            router.push('/create');
 
             })
         .catch(error => console.log(error));

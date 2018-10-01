@@ -4,12 +4,15 @@
 
             <!-- <router-link
                 v-bind:to="{ name: 'LoginPage'}"
-            > -->
-            <router-link
-                to="/"
-            >
+            > 
                 Login
-            </router-link>
+            </router-link> -->
+            <button
+                class="button is-warning"
+                v-on:click="logout"
+                >
+                    Logout
+            </button>
              <b-field label="Title">
                 <b-input
                     placeholder="Name of your task..."
@@ -29,7 +32,6 @@
             </b-field>
                 <p class="control">
                     <button
-                    type='submit'
                     class="button is-primary"
                     v-on:click="sendTodo"
                     >
@@ -48,6 +50,7 @@
 
 <script>
 import { createTodo } from '../services/communication';
+import router from '../router';
 
 export default{
   name: 'CreateTodo',
@@ -59,7 +62,13 @@ export default{
   },
   methods: {
     sendTodo() {
-      createTodo(this.title, false);
+      createTodo(this.title, false)
+        .then(response => console.log('created todo', response))
+        .catch(console.log)
+    },
+    logout(){
+        sessionStorage.removeItem('access_token');
+        router.push('/');
     }
   },
 };
