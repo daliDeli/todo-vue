@@ -6,7 +6,7 @@
                 v-bind:to="{ name: 'LoginPage'}"
             > -->
             <router-link
-                to="/login"
+                to="/"
             >
                 Login
             </router-link>
@@ -59,7 +59,7 @@ export default{
   },
   methods: {
     sendTodo() {
-      createTodo(this.title, false); 
+      createTodo(this.title, false);
     }
   },
 };

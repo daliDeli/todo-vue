@@ -30,6 +30,7 @@
 
 <script>
 import { loginUser } from '../services/communication';
+import router from '../router';
 
 export default{
   name: 'LoginPage',
@@ -43,8 +44,10 @@ export default{
     login() {
       loginUser(this.email, this.password)
         .then(response => {
-            console.log(response);
-            
+            console.log('login response', response.data);
+            sessionStorage.setItem('access_token',response.data.access_token);
+            router.push('/create')
+
             })
         .catch(error => console.log(error));
     },

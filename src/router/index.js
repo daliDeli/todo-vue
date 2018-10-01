@@ -12,7 +12,11 @@ export default new Router({
       name: 'CreateTodo',
       component: CreateTodo,
       beforeEnter: (to, from, next) => {
-        next();
+        if (sessionStorage.getItem('access_token')) {
+          next();
+        } else {
+          next(from.fullPath);
+        }
       },
     },
     {
@@ -20,13 +24,10 @@ export default new Router({
       name: 'LoginPage',
       component: LoginPage,
       beforeEnter: (to, from, next) => {
-        // before enter it checks if it is a ulogovan user
-        const user = true;
-        console.log(to);
-        if (user) {
-          next();
-        } else {
+        if (sessionStorage.getItem('access_token')) {
           next(from.fullPath);
+        } else {
+          next();
         }
       },
     },
