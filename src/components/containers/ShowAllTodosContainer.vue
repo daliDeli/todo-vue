@@ -21,6 +21,7 @@
                 :index= 'i'
                 :removeTodo= 'removeTodo'
                 :completedTodo= 'completedTodo'
+                :completed= 'todo.completed'
                 :todo= 'todo'
             >
             </app-todo>
