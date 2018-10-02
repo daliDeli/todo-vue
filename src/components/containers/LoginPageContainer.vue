@@ -5,21 +5,21 @@
              <b-field label="Email">
                 <b-input
                     type="is-success"
-                    v-model='email'
+                    v-model= 'email'
                 >
                 </b-input>
             </b-field>
             <b-field label="Password">
                 <b-input
                     type="password"
-                    v-model='password'
+                    v-model= 'password'
                 >
                 </b-input>
             </b-field>
             <p class="control">
                 <button
                 class="button is-primary"
-                v-on:click="login"
+                v-on:click= "login"
                 >
                 Login
                 </button>
@@ -29,8 +29,8 @@
 </template>
 
 <script>
-import { loginUser } from '../services/communication';
-import router from '../router';
+import { loginUser } from '../../services/communication';
+import router from '../../router';
 
 export default{
   name: 'LoginPage',
@@ -43,14 +43,11 @@ export default{
   methods: {
     login() {
       loginUser(this.email, this.password)
-        .then(response => {
-            console.log('mail,pass',this.email, this.password);
-            console.log('login response', response.data);
-            sessionStorage.setItem('access_token',response.data.access_token);
-            router.push('/create');
-
-            })
-        .catch(error => console.log(error));
+        .then((response) => {
+          sessionStorage.setItem('access_token', response.data.access_token);
+          router.push('/todos');
+        })
+        .catch(error => console.warn(error));
     },
   },
 };
