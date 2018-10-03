@@ -19,7 +19,7 @@
             <p class="control">
                 <button
                 class="button is-primary"
-                v-on:click= "login"
+                @click= "login"
                 >
                 Login
                 </button>
@@ -30,7 +30,7 @@
 
 <script>
 import { loginUser } from '../../services/communication';
-import router from '../../router';
+// import router from '../../router';
 
 export default{
   name: 'LoginPage',
@@ -45,7 +45,7 @@ export default{
       loginUser(this.email, this.password)
         .then((response) => {
           sessionStorage.setItem('access_token', response.data.access_token);
-          router.push('/todos');
+          this.$router.push('/todos');
         })
         .catch(error => console.warn(error));
     },

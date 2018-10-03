@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import CreateTodo from '../components/containers/CreateTodoContainer';
+import CreateTodo from '../components/CreateTodo';
 import LoginPage from '../components/containers/LoginPageContainer';
 import ShowAllTodos from '../components/containers/ShowAllTodosContainer';
 

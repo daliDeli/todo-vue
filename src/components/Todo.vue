@@ -12,14 +12,14 @@
         <b-checkbox
             v-if= "!completed"
             v-model= "isCompleted"
-            v-on:input= 'completedTodo(id, todo)'
+            @input= 'completedTodo(id, todo)'
             true-value= 1
             false-value= 0
         >
             Done
         </b-checkbox>
 
-        <b-modal width='250' :active.sync= "isComponentModalActive" has-modal-card>
+        <b-modal :active.sync= "isComponentModalActive" has-modal-card>
             <modal-form  v-bind="formProps"></modal-form>
         </b-modal>
 

@@ -1,68 +1,84 @@
 <template>
-    <section>
-        <div class='container is-fluid'>
+  <section>
+    <div class='container is-fluid'>
 
-                <router-link
-                    v-bind:to= "{ name: 'CreateTodo'}"
-                >
-                    <button
-                    class="button is-success"
-                    >
-                    Create
-                    </button>
-                </router-link>
-            <div
-            class="container is-fluid todo-container"
-            :key= 'todo.id' v-for= '(todo, i) in todos'
-            >
-            <app-todo
-                :title= 'todo.title'
-                :id= 'todo.id'
-                :index= 'i'
-                :removeTodo= 'removeTodo'
-                :completedTodo= 'completedTodo'
-                :completed= 'todo.completed'
-                :todo= 'todo'
-            >
-            </app-todo>
-            </div>
+      <button
+      class="button is-warning"
+      @click= "logout"
+      >
+          Logout
+      </button>
 
-        </div>
-    </section>
+      <app-create-todo
+        :title= 'title'
+        :createTodo= 'createTodo'
+      />
+
+      <div
+      class="container is-fluid todo-container"
+      :key= 'todo.id' v-for= '(todo, i) in todos'
+      >
+
+      <app-todo
+          :title= 'todo.title'
+          :id= 'todo.id'
+          :index= 'i'
+          :removeTodo= 'removeTodo'
+          :completedTodo= 'completedTodo'
+          :completed= 'todo.completed'
+          :todo= 'todo'
+      />
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
-import { getAllTodos, updateTodo, deleteTodo } from '../../services/communication';
+import { sendTodo, getAllTodos, updateTodo, deleteTodo } from '../../services/communication';
 import Todo from '../Todo';
+import CreateTodo from '../CreateTodo';
 
 export default{
   name: 'ShowAllTodos',
   data() {
     return {
       todos: [],
+      title: '',
     };
   },
   components: {
     'app-todo': Todo,
+    'app-create-todo': CreateTodo,
   },
   methods: {
+    createTodo(title) {
+      sendTodo(title, false)
+        .then(() => { this.title = ''; })
+        .catch(console.log);
+    },
+
     showTodos() {
       return getAllTodos()
-        .then(({ data }) => this.todos.push(...data.data))
-        .catch(error => console.log(error));
+        .then(({ data }) => console.log(data.data) || this.todos.push(...data.data))
+        .catch(console.log);
     },
 
     completedTodo(id, todo) {
       updateTodo(id, todo)
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .then(console.log)
+        .catch(console.log);
     },
 
     removeTodo(id, i) {
       deleteTodo(id)
-        .then(res => console.log(res))
+        .then(console.log)
         .then(() => this.todos.splice(i, 1))
-        .catch(err => console.log(err));
+        .catch(console.log);
+    },
+
+    logout() {
+      sessionStorage.removeItem('access_token');
+      this.$router.push('/');
     },
 
   },
