@@ -24,14 +24,22 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+import { sendTodo } from '../services/communication';
 
 export default{
-  props: ['title', 'createTodo'],
-  data() {
-    return {
-    // titleTodo because of I cant mutate props
-      titleTodo: this.title,
-    };
+  computed: {
+    ...mapGetters({ titleTodo: 'titleGetter' }),
+    // titleTodo() {
+    //   return this.$store.state.titleTodo;
+    // },
+  },
+  methods: {
+    createTodo(title) {
+      sendTodo(title, false)
+        .then(console.log)
+        .catch(console.log);
+    },
   },
 };
 </script>
