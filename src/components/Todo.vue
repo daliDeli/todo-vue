@@ -1,26 +1,26 @@
 <template>
-    <div class="container is-fluid">
-        <p class="todo-title">{{ title }}</p>
+    <div class='container is-fluid'>
+        <p class='todo-title'>{{ title }}</p>
         <button
-            v-if= "!completed"
-            class="button is-danger"
-            @click="isComponentModalActive = true"
+            v-if='!completed'
+            class='button is-danger'
+            @click='isComponentModalActive = true'
         >
             Delete
         </button>
 
         <b-checkbox
-            v-if= "!completed"
-            v-model= "isCompleted"
-            @input= 'completedTodo(id, todo)'
-            true-value= 1
-            false-value= 0
+            v-if='!completed'
+            v-model='isCompleted'
+            @input='completedTodo(id, todo)'
+            true-value= true
+            false-value= false
         >
             Done
         </b-checkbox>
 
-        <b-modal :active.sync= "isComponentModalActive" has-modal-card>
-            <modal-form  v-bind="formProps"></modal-form>
+        <b-modal :active.sync='isComponentModalActive' has-modal-card>
+            <modal-form  v-bind='formProps'></modal-form>
         </b-modal>
 
     </div>
@@ -30,14 +30,14 @@
 const ModalForm = {
   props: ['removeTodo', 'id', 'index'],
   template: `
-        <div class="modal-card" style="width: auto">
-            <p class="modal-card-title">
+        <div class='modal-card' style='width: auto'>
+            <p class='modal-card-title'>
                 Do you really want to delete this Todo?
             </p>
 
             <button
-            class="button is-danger"
-            @click="removeTodo(id, index)"
+            class='button is-danger'
+            @click='removeTodo(id, index)'
             >
                 Delete
             </button>

@@ -1,20 +1,19 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-// import CreateTodo from '../components/CreateTodo';
 import LoginPage from '../components/LoginPage';
 import ShowAllTodosContainer from '../components/containers/ShowAllTodosContainer';
-
+import { isAuthenticated } from '../services/authService';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/todos',
       name: 'ShowAllTodos',
       component: ShowAllTodosContainer,
       beforeEnter: (to, from, next) => {
-        if (sessionStorage.getItem('access_token')) {
+        if (isAuthenticated()) {
           next();
         } else {
           next(from.fullPath);
@@ -26,7 +25,7 @@ export default new Router({
       name: 'LoginPage',
       component: LoginPage,
       beforeEnter: (to, from, next) => {
-        if (sessionStorage.getItem('access_token')) {
+        if (isAuthenticated()) {
           next(from.fullPath);
         } else {
           next();
@@ -36,3 +35,9 @@ export default new Router({
   ],
   mode: 'history',
 });
+// TODO meta field, add to global guard, bad logic for Login
+// router.beforeEach((to, from, next) => {
+//   // ...
+// });
+
+export default router;

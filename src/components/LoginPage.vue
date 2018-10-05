@@ -2,24 +2,24 @@
     <section>
         <div class='container is-fluid'>
 
-             <b-field label="Email">
+             <b-field label='Email'>
                 <b-input
-                    type="is-success"
-                    v-model= 'email'
+                    type='is-success'
+                    v-model='email'
                 >
                 </b-input>
             </b-field>
-            <b-field label="Password">
+            <b-field label='Password'>
                 <b-input
-                    type="password"
-                    v-model= 'password'
+                    type='password'
+                    v-model='password'
                 >
                 </b-input>
             </b-field>
-            <p class="control">
+            <p class='control'>
                 <button
-                class="button is-primary"
-                @click= "login"
+                class='button is-primary'
+                @click='login'
                 >
                 Login
                 </button>
@@ -29,7 +29,8 @@
 </template>
 
 <script>
-import { loginUser } from '../services/communication';
+import { loginUser } from '../services/apiService';
+import { approveUser } from '../services/authService';
 
 export default{
   name: 'LoginPage',
@@ -43,8 +44,8 @@ export default{
     login() {
       loginUser(this.email, this.password)
         .then((response) => {
-          sessionStorage.setItem('access_token', response.data.access_token);
-          this.$router.push('/todos');
+          approveUser(response.data.access_token);
+          this.$router.push({ name: 'ShowAllTodos' });
         })
         .catch(error => console.warn(error));
     },

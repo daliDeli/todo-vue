@@ -1,21 +1,22 @@
 <template>
     <section>
-        <div class="container is-fluid task-container">
-            <b-field label="What do you need to do?"
-                type="is-success"
+        <div class='container is-fluid task-container'>
+            <b-field label='What do you need to do?'
+                type='is-success'
             >
                 <b-input
                     class='todo-title'
-                    placeholder="Name of your task..."
-                    type="search"
+                    placeholder='Name of your task...'
+                    type='search'
                     required
-                    v-model= 'titleTodo'
+                    v-model='titleTodo'
+                    @input='updateTitle'
                 >
                 </b-input>
             </b-field>
             <button
-            class="button is-primary"
-            v-on:click= "createTodo(titleTodo)"
+            class='button is-primary'
+            @click='createTodo(titleTodo)'
             >
                 Create
             </button>
@@ -24,22 +25,14 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import { sendTodo } from '../services/communication';
+import { mapGetters, mapActions } from 'vuex';
 
 export default{
   computed: {
     ...mapGetters({ titleTodo: 'titleGetter' }),
-    // titleTodo() {
-    //   return this.$store.state.titleTodo;
-    // },
   },
   methods: {
-    createTodo(title) {
-      sendTodo(title, false)
-        .then(console.log)
-        .catch(console.log);
-    },
+    ...mapActions(['updateTitle', 'createTodo']),
   },
 };
 </script>
