@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import { sendTodo, getAllTodos, loginUser } from './services/apiService';
+import { sendTodo, getAllTodos, loginUser, deleteTodo } from './services/apiService';
 import { setAccessToken, removeAccessToken } from './services/authService';
 
 import router from './router';
 
 Vue.use(Vuex);
-
+// adding todo doesnt render the page
 export const store = new Vuex.Store({
   state: {
     email: '',
@@ -51,6 +51,20 @@ export const store = new Vuex.Store({
       state.todos.push(...data);
     },
 
+    addTodo(state) {
+      state.todos = state.todos;
+    },
+
+    removeTodo(state, id) {
+      console.log('delete');
+      state.todos.forEach((todo, i) => {
+        if (todo.id === id) {
+          console.log('delete index', i);
+          state.todos.splice(i, 1);
+        }
+      });
+    },
+
     logout() {
       removeAccessToken();
       router.push({ name: 'LoginPage' });
@@ -60,13 +74,20 @@ export const store = new Vuex.Store({
   actions: {
     createTodo(context) {
       sendTodo(context.getters.titleGetter, false)
-        .then(console.log)
+        .then(() => context.commit('updateTitle', ''))
+        .then(() => context.commit('addTodo'))
         .catch(console.log);
     },
 
     showTodos(context) {
       return getAllTodos()
         .then(({ data }) => context.commit('updateTodos', data))
+        .catch(console.log);
+    },
+
+    removeTodo(context, id) {
+      deleteTodo(id)
+        .then(() => context.commit('removeTodo', id))
         .catch(console.log);
     },
 
@@ -79,7 +100,8 @@ export const store = new Vuex.Store({
     },
 
     login(context) {
-      loginUser(context.getters.emailGetter, context.getters.passwordGetter)
+      loginUser(context.getters.emailGetter,
+        context.getters.passwordGetter)
         .then((data) => {
           setAccessToken(data.access_token);
           router.push({ name: 'ShowAllTodos' });

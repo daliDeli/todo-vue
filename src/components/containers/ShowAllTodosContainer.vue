@@ -9,40 +9,32 @@
           Logout
       </button>
 
-      <app-create-todo/>
-      <div
-      class='container is-fluid todo-container'
-      :key='todo.id' v-for='(todo, i) in todos'
-      >
+      <CreateTodo/>
 
-      <app-todo
-          :title='todo.title'
-          :id='todo.id'
-          :index='i'
-          :removeTodo='removeTodo'
+      <Todo
+          class='container is-fluid todo-container'
+          :key='todo.id' v-for='todo in todos'
           :completedTodo='completedTodo'
-          :completed='todo.completed'
           :todo='todo'
       />
-      </div>
     </div>
   </section>
 </template>
 
 <script>
-// nema loopa tako da mogu u samom TODO da pozovem svaki properti
+// @onDelete=""
 import { mapActions, mapGetters } from 'vuex';
 import Todo from '../Todo';
 import CreateTodo from '../CreateTodo';
-import { updateTodo, deleteTodo } from '../../services/apiService';
+import { updateTodo } from '../../services/apiService';
 import { isAuthenticated } from '../../services/authService';
 import { store } from '../../store';
 
 export default{
   name: 'ShowAllTodos',
   components: {
-    'app-todo': Todo,
-    'app-create-todo': CreateTodo,
+    Todo,
+    CreateTodo,
   },
   computed: {
     ...mapGetters({ todos: 'todosGetter' }),
@@ -53,12 +45,6 @@ export default{
     completedTodo(id, todo) {
       updateTodo(id, todo)
         .then(console.log)
-        .catch(console.log);
-    },
-
-    removeTodo(id, i) {
-      deleteTodo(id)
-        .then(() => this.todos.splice(i, 1))
         .catch(console.log);
     },
   },
@@ -79,6 +65,7 @@ export default{
 <style scoped>
 .todo-container{
   border:2px solid teal;
+  padding: 5px;
   margin: 5px;
 }
 button{

@@ -1,8 +1,8 @@
 <template>
     <div class='container is-fluid'>
-        <p class='todo-title'>{{ title }}</p>
+        <p class='todo-title'>{{ todo.title }}</p>
         <button
-            v-if='!completed'
+            v-if='!todo.completed'
             class='button is-danger'
             @click='isComponentModalActive = true'
         >
@@ -10,9 +10,9 @@
         </button>
 
         <b-checkbox
-            v-if='!completed'
+            v-if='!todo.completed'
             v-model='isCompleted'
-            @input='completedTodo(id, todo)'
+            @input='completedTodo(todo.id, todo)'
             true-value= true
             false-value= false
         >
@@ -27,10 +27,19 @@
 </template>
 
 <script>
-// import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 const ModalForm = {
-  props: ['removeTodo', 'id', 'index'],
+  methods: {
+    ...mapActions(['removeTodo']),
+  },
+  props: {
+    id:
+    {
+      type: Number,
+      required: true,
+    },
+  },
   template: `
         <div class='modal-card' style='width: auto'>
             <p class='modal-card-title'>
@@ -39,7 +48,7 @@ const ModalForm = {
 
             <button
             class='button is-danger'
-            @click='removeTodo(id, index)'
+            @click='removeTodo(id)'
             >
                 Delete
             </button>
@@ -48,22 +57,30 @@ const ModalForm = {
 };
 
 export default {
-  props: [
-    'title', 'removeTodo', 'id', 'index', 'completedTodo', 'completed', 'todo',
-  ],
+
+  props: {
+    todo:
+    {
+      type: Object,
+      required: true,
+    },
+    completedTodo:
+    {
+      type: Function,
+      required: true,
+    },
+  },
   components: {
     ModalForm,
   },
-  //   computed: {
-  //     ...mapGetters({ title: 'titleGetter' }),
-  //   },
+
   data() {
     return {
       isCompleted: this.completed,
       isComponentModalActive: false,
       formProps: {
         removeTodo: this.removeTodo,
-        id: this.id,
+        id: this.todo.id,
         index: this.index,
       },
     };
