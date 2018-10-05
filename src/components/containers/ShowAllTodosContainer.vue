@@ -10,7 +10,6 @@
       </button>
 
       <app-create-todo/>
-      // nema loopa tako da mogu u samom TODO da pozovem svaki properti
       <div
       class='container is-fluid todo-container'
       :key='todo.id' v-for='(todo, i) in todos'
@@ -31,19 +30,16 @@
 </template>
 
 <script>
+// nema loopa tako da mogu u samom TODO da pozovem svaki properti
 import { mapActions, mapGetters } from 'vuex';
 import Todo from '../Todo';
 import CreateTodo from '../CreateTodo';
-import { getAllTodos, updateTodo, deleteTodo } from '../../services/apiService';
-import { isAuthenticated, logoutUser } from '../../services/authService';
+import { updateTodo, deleteTodo } from '../../services/apiService';
+import { isAuthenticated } from '../../services/authService';
+import { store } from '../../store';
 
 export default{
   name: 'ShowAllTodos',
-  // data() {
-  //   return {
-  // todos: [],
-  //   };
-  // },
   components: {
     'app-todo': Todo,
     'app-create-todo': CreateTodo,
@@ -52,13 +48,7 @@ export default{
     ...mapGetters({ todos: 'todosGetter' }),
   },
   methods: {
-    ...mapActions(['showTodos']),
-
-    showTodos() {
-      return getAllTodos()
-        .then(({ data }) => this.todos.push(...data.data))
-        .catch(console.log);
-    },
+    ...mapActions(['showTodos', 'logout']),
 
     completedTodo(id, todo) {
       updateTodo(id, todo)
@@ -71,19 +61,14 @@ export default{
         .then(() => this.todos.splice(i, 1))
         .catch(console.log);
     },
-
-    logout() {
-      logoutUser();
-      this.$router.push({ name: 'LoginPage' });
-    },
-
   },
 
   beforeRouteEnter(to, from, next) {
     if (isAuthenticated()) {
-      next((vm) => {
-        vm.showTodos();
-      });
+      store.dispatch('showTodos')
+        .then(() => {
+          next();
+        });
     } else {
       next(from.fullPath);
     }
@@ -93,14 +78,14 @@ export default{
 
 <style scoped>
 .todo-container{
-    border:2px solid teal;
-    margin: 5px;
+  border:2px solid teal;
+  margin: 5px;
 }
 button{
-    width: 80px;
-    font-size: 1.2em;
-    padding: 2px;
-    margin: 15px 5px;
+  width: 80px;
+  font-size: 1.2em;
+  padding: 2px;
+  margin: 15px 5px;
 }
 
 </style>

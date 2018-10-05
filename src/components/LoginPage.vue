@@ -6,6 +6,7 @@
                 <b-input
                     type='is-success'
                     v-model='email'
+                    @input='updateEmail'
                 >
                 </b-input>
             </b-field>
@@ -13,6 +14,7 @@
                 <b-input
                     type='password'
                     v-model='password'
+                    @input='updatePassword'
                 >
                 </b-input>
             </b-field>
@@ -29,26 +31,18 @@
 </template>
 
 <script>
-import { loginUser } from '../services/apiService';
-import { approveUser } from '../services/authService';
+import { mapGetters, mapActions } from 'vuex';
 
 export default{
   name: 'LoginPage',
-  data() {
-    return {
-      email: '',
-      password: '',
-    };
+  computed: {
+    ...mapGetters({
+      email: 'emailGetter',
+      password: 'passwordGetter',
+    }),
   },
   methods: {
-    login() {
-      loginUser(this.email, this.password)
-        .then((response) => {
-          approveUser(response.data.access_token);
-          this.$router.push({ name: 'ShowAllTodos' });
-        })
-        .catch(error => console.warn(error));
-    },
+    ...mapActions(['updateEmail', 'updatePassword', 'login']),
   },
 };
 </script>

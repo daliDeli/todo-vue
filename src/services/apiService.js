@@ -9,8 +9,12 @@ const instance = axios.create({
   },
 });
 
-
-export const loginUser = (email, password) => axios.post(`${URL}/auth/login`, { email, password });
+export const loginUser = (email, password) =>
+  axios.post(`${URL}/auth/login`, { email, password })
+    .then(({ data }) => {
+      instance.defaults.headers.common.authorization = `Bearer ${data.access_token}`;
+      return data;
+    });
 
 export const sendTodo = (title, completed) => instance({
   method: 'post',

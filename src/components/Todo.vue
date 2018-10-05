@@ -27,6 +27,8 @@
 </template>
 
 <script>
+// import { mapGetters, mapActions } from 'vuex';
+
 const ModalForm = {
   props: ['removeTodo', 'id', 'index'],
   template: `
@@ -52,6 +54,9 @@ export default {
   components: {
     ModalForm,
   },
+  //   computed: {
+  //     ...mapGetters({ title: 'titleGetter' }),
+  //   },
   data() {
     return {
       isCompleted: this.completed,

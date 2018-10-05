@@ -12,32 +12,24 @@ const router = new Router({
       path: '/todos',
       name: 'ShowAllTodos',
       component: ShowAllTodosContainer,
-      beforeEnter: (to, from, next) => {
-        if (isAuthenticated()) {
-          next();
-        } else {
-          next(from.fullPath);
-        }
-      },
     },
     {
       path: '/',
       name: 'LoginPage',
       component: LoginPage,
-      beforeEnter: (to, from, next) => {
-        if (isAuthenticated()) {
-          next(from.fullPath);
-        } else {
-          next();
-        }
+      meta: {
+        guest: true,
       },
     },
   ],
   mode: 'history',
 });
 // TODO meta field, add to global guard, bad logic for Login
-// router.beforeEach((to, from, next) => {
-//   // ...
-// });
+router.beforeEach((to, from, next) => {
+  if (!to.meta.guest && !isAuthenticated()) {
+    next({ name: 'LoginPage' });
+  }
+  next();
+});
 
 export default router;
