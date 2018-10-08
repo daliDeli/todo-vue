@@ -1,4 +1,4 @@
-import { sendTodo, getAllTodos, deleteTodo } from '../../services/apiService';
+import { sendTodo, getAllTodos, deleteTodo, updateTodo } from '../../services/apiService';
 
 export default{
   state: {
@@ -25,6 +25,7 @@ export default{
     createTodo(context) {
       sendTodo(context.getters.titleGetter, false)
         .then(() => context.commit('updateTitle', ''))
+        .then(() => context.dispatch('showTodos'))
         .catch(error => context.commit('dataError', error));
     },
 
@@ -43,6 +44,12 @@ export default{
     updateTitle(context, payload) {
       context.commit('updateTitle', payload);
     },
+
+    completedTodo(context, todo) {
+      updateTodo(todo.id, todo)
+        .then(() => context.dispatch('showTodos'))
+        .catch(error => context.commit('dataError', error));
+    },
   },
 
   mutations: {
@@ -51,11 +58,8 @@ export default{
     },
 
     updateTodos(state, { data }) {
+      state.todos = [];
       state.todos.push(...data);
-    },
-
-    addTodo(state) {
-      state.todos = state.todos;
     },
 
     removeTodo(state, id) {
@@ -65,6 +69,7 @@ export default{
         }
       });
     },
+
     dataError(state) {
       state.dataError = true;
     },

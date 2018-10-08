@@ -12,7 +12,7 @@
         <b-checkbox
             v-if='!todo.completed'
             v-model='isCompleted'
-            @input='completedTodo(todo.id, todo)'
+            @input='completedTodo(todo)'
             true-value= true
             false-value= false
         >
@@ -64,14 +64,17 @@ export default {
       type: Object,
       required: true,
     },
-    completedTodo:
-    {
-      type: Function,
-      required: true,
-    },
+    // completedTodo:
+    // {
+    //   type: Function,
+    //   required: true,
+    // },
   },
   components: {
     ModalForm,
+  },
+  methods: {
+    ...mapActions(['completedTodo']),
   },
 
   data() {

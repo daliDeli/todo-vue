@@ -18,7 +18,6 @@
       <Todo
           class='container is-fluid todo-container'
           :key='todo.id' v-for='todo in todos'
-          :completedTodo='completedTodo'
           :todo='todo'
       />
     </div>
