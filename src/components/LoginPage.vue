@@ -2,6 +2,9 @@
     <section>
         <div class='container is-fluid'>
 
+            <b-message v-if="error" title="Danger" type="is-danger">
+            This is invalid data, please try again
+            </b-message>
              <b-field label='Email'>
                 <b-input
                     type='is-success'
@@ -39,6 +42,7 @@ export default{
     ...mapGetters({
       email: 'emailGetter',
       password: 'passwordGetter',
+      error: 'loginErrorGetter',
     }),
   },
   methods: {

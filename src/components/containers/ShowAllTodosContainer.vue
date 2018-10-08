@@ -2,6 +2,10 @@
   <section>
     <div class='container is-fluid'>
 
+      <b-message v-if="error" title="Danger" type="is-danger">
+      An error occurred
+      </b-message>
+
       <button
       class='button is-warning'
       @click='logout'
@@ -36,15 +40,16 @@ export default{
     CreateTodo,
   },
   computed: {
-    ...mapGetters({ todos: 'todosGetter' }),
+    ...mapGetters({
+      todos: 'todosGetter',
+      error: 'dataErrorGetter',
+    }),
   },
   methods: {
     ...mapActions(['showTodos', 'logout']),
 
     completedTodo(id, todo) {
-      updateTodo(id, todo)
-        // .then(console.log)
-        .catch(console.log);
+      updateTodo(id, todo);
     },
   },
 

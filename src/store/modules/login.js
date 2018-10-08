@@ -7,6 +7,7 @@ export default {
   state: {
     email: '',
     password: '',
+    loginError: false,
   },
 
   getters: {
@@ -16,6 +17,10 @@ export default {
 
     passwordGetter(state) {
       return state.password;
+    },
+
+    loginErrorGetter(state) {
+      return state.loginError;
     },
   },
   actions: {
@@ -30,7 +35,7 @@ export default {
           setAccessToken(data.access_token);
           router.push({ name: 'ShowAllTodos' });
         })
-        .catch(error => console.warn(error));
+        .catch(error => context.commit('loginError', error));
     },
 
     updateEmail(context, payload) {
@@ -54,6 +59,10 @@ export default {
     logout() {
       removeAccessToken();
       router.push({ name: 'LoginPage' });
+    },
+
+    loginError(state) {
+      state.loginError = true;
     },
 
   },

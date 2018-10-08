@@ -4,6 +4,7 @@ export default{
   state: {
     todos: [],
     titleTodo: '',
+    dataError: false,
   },
 
   getters: {
@@ -14,25 +15,29 @@ export default{
     todosGetter(state) {
       return state.todos;
     },
+
+    dataErrorGetter(state) {
+      return state.dataError;
+    },
   },
 
   actions: {
     createTodo(context) {
       sendTodo(context.getters.titleGetter, false)
         .then(() => context.commit('updateTitle', ''))
-        .catch(console.log);
+        .catch(error => context.commit('dataError', error));
     },
 
     showTodos(context) {
       return getAllTodos()
         .then(({ data }) => context.commit('updateTodos', data))
-        .catch(console.log);
+        .catch(error => context.commit('dataError', error));
     },
 
     removeTodo(context, id) {
       deleteTodo(id)
         .then(() => context.commit('removeTodo', id))
-        .catch(console.log);
+        .catch(error => context.commit('dataError', error));
     },
 
     updateTitle(context, payload) {
@@ -59,6 +64,9 @@ export default{
           state.todos.splice(i, 1);
         }
       });
+    },
+    dataError(state) {
+      state.dataError = true;
     },
   },
 
