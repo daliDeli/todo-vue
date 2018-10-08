@@ -9,7 +9,7 @@
                     placeholder='Name of your task...'
                     type='search'
                     required
-                    v-model='titleTodo'
+                    :value='titleTodo'
                     @input='updateTitle'
                 >
                 </b-input>

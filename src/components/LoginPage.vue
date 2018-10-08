@@ -5,7 +5,7 @@
              <b-field label='Email'>
                 <b-input
                     type='is-success'
-                    v-model='email'
+                    :value='email'
                     @input='updateEmail'
                 >
                 </b-input>
@@ -13,7 +13,7 @@
             <b-field label='Password'>
                 <b-input
                     type='password'
-                    v-model='password'
+                    :value='password'
                     @input='updatePassword'
                 >
                 </b-input>

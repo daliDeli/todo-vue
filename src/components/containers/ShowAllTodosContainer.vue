@@ -22,7 +22,6 @@
 </template>
 
 <script>
-// @onDelete=""
 import { mapActions, mapGetters } from 'vuex';
 import Todo from '../Todo';
 import CreateTodo from '../CreateTodo';
@@ -44,7 +43,7 @@ export default{
 
     completedTodo(id, todo) {
       updateTodo(id, todo)
-        .then(console.log)
+        // .then(console.log)
         .catch(console.log);
     },
   },

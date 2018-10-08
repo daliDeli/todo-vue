@@ -1,40 +1,38 @@
 import axios from 'axios';
 
-const URL = 'http://localhost:80/api';
+const TODOS = '/todos';
 
-const instance = axios.create({
-  baseURL: `${URL}/todos`,
-  headers: {
-    authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
-  },
-});
+axios.defaults.baseURL = 'http://localhost:80/api';
+axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('access_token')}`;
+
+// const instance = axios.create({
+//   baseURL: 'http://localhost:80/api',
+//   headers: {
+//     authorization: `Bearer ${sessionStorage.getItem('access_token')}`,
+//   },
+// });
 
 export const loginUser = (email, password) =>
-  axios.post(`${URL}/auth/login`, { email, password })
+  axios.post('/auth/login', { email, password })
     .then(({ data }) => {
-      instance.defaults.headers.common.authorization = `Bearer ${data.access_token}`;
+      axios.defaults.headers.common.Authorization = `Bearer ${data.access_token}`;
+      // instance.defaults.headers.common.Authorization = `Bearer ${data.access_token}`;
       return data;
     });
 
-export const sendTodo = (title, completed) => instance({
-  method: 'post',
-  data: { title, completed },
-});
+export const getAllTodos = () => axios.get(TODOS);
 
-export const getAllTodos = () => instance({
-  method: 'get',
-});
+export const sendTodo = (title, completed) => axios.post(
+  TODOS,
+  { title, completed },
+);
 
-export const updateTodo = (id, todo) => instance({
-  method: 'patch',
-  url: `/${id}`,
-  data: {
+export const updateTodo = (id, todo) => axios.patch(
+  `${TODOS}/${id}`,
+  {
     ...todo,
-    completed: 1,
+    completed: true,
   },
-});
+);
 
-export const deleteTodo = id => instance({
-  method: 'delete',
-  url: `/${id}`,
-});
+export const deleteTodo = id => axios.delete(`${TODOS}/${id}`);
