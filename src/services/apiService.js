@@ -1,6 +1,10 @@
 import axios from 'axios';
+import { format } from 'util';
 
-const ENDPOINTS = { all: '/todos' };
+const ENDPOINTS = {
+  TODOS: '/todos',
+  SINGLE_TODO: '/todos/%s',
+};
 
 axios.defaults.baseURL = 'http://localhost:80/api';
 axios.defaults.headers.common.Authorization = `Bearer ${sessionStorage.getItem('access_token')}`;
@@ -12,19 +16,21 @@ export const loginUser = (email, password) =>
       return data;
     });
 
-export const getAllTodos = () => axios.get(ENDPOINTS.all);
+export const getAllTodos = () => axios.get(ENDPOINTS.TODOS);
 
 export const sendTodo = (title, completed) => axios.post(
-  ENDPOINTS.all,
+  ENDPOINTS.TODOS,
   { title, completed },
 );
 
 export const updateTodo = (id, todo) => axios.patch(
-  `${ENDPOINTS.all}/${id}`,
+  format(ENDPOINTS.SINGLE_TODO, id),
   {
     ...todo,
     completed: true,
   },
 );
 
-export const deleteTodo = id => axios.delete(`${ENDPOINTS.all}/${id}`);
+export const deleteTodo = id => axios.delete(
+  format(ENDPOINTS.SINGLE_TODO, id),
+);

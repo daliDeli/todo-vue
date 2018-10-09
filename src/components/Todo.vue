@@ -20,7 +20,7 @@
         </b-checkbox>
 
         <b-modal :active.sync='isComponentModalActive' has-modal-card>
-            <modal-form  v-bind='formProps'></modal-form>
+            <Modal  v-bind='formProps'></Modal>
         </b-modal>
 
     </div>
@@ -28,50 +28,18 @@
 
 <script>
 import { mapActions } from 'vuex';
-
-const ModalForm = {
-  methods: {
-    ...mapActions(['removeTodo']),
-  },
-  props: {
-    id:
-    {
-      type: Number,
-      required: true,
-    },
-  },
-  template: `
-        <div class='modal-card' style='width: auto'>
-            <p class='modal-card-title'>
-                Do you really want to delete this Todo?
-            </p>
-
-            <button
-            class='button is-danger'
-            @click='removeTodo(id)'
-            >
-                Delete
-            </button>
-        </div>        
-        `,
-};
+import Modal from './Modal';
 
 export default {
-
   props: {
     todo:
     {
       type: Object,
       required: true,
     },
-    // completedTodo:
-    // {
-    //   type: Function,
-    //   required: true,
-    // },
   },
   components: {
-    ModalForm,
+    Modal,
   },
   methods: {
     ...mapActions(['completedTodo']),
@@ -79,7 +47,7 @@ export default {
 
   data() {
     return {
-      isCompleted: this.completed,
+      isCompleted: this.todo.completed,
       isComponentModalActive: false,
       formProps: {
         removeTodo: this.removeTodo,
@@ -97,7 +65,7 @@ button{
     width: 80px;
     font-size: 1.2em;
     padding: 2px;
-    margin: 15px 5px;
+    margin: 1% 0% 1% 4%;
 }
 .todo-title{
     font-weight: bolder;
